@@ -41,8 +41,8 @@ def login():
                 
                 return jsonify({
                     "status": "success", 
-                    "user_id": user['id'], 
-                    "ime": user['ime_prezime']
+                    "user_id": int(user['id']),  # Osiguravamo da je broj
+                    "ime": str(user['ime_prezime']) # Osiguravamo da je tekst (String)
                 }), 200
             else:
                 return jsonify({"status": "error", "message": "Korisnik nije aktivan"}), 403
