@@ -15,12 +15,12 @@ def get_db_connection():
         port=os.getenv('AIVEN_PORT'),
         database="defaultdb"
     )
-
+    
 # --- 1. LOGIN ---
 @app.route('/login', methods=['POST'])
 def login():
-     data = request.json
-    print(f"STIGLO SA TELEFONA: User: {data.get('korisnicko_ime')}, Pass: {data.get('lozinka')}") # DODAJ OVU LINIJU
+    data = request.json
+    print(f"STIGLO SA TELEFONA: User: {data.get('korisnicko_ime')}, Pass: {data.get('lozinka')}")
     username = data.get('korisnicko_ime')
     password = data.get('lozinka')
     device = data.get('device_model')
